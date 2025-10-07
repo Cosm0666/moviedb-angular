@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="title-container">
+    <h1 class="title-section">Filmes Populares</h1>
+    <button *ngIf="router.url === '/home'" [routerLink]="['/movies']" class="btn-list">Ver Todos</button>
+  </div>
+  <div class="movies-grid">
+    <a
+      class="movie-card"
+      *ngFor="let movie of movies"
+      [routerLink]="['/movie', movie.id]"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        [alt]="movie.title"
+      />
+      <div class="movie-info">
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.release_date | date }}</p>
+      </div>
+    </a>
+  </div>
+  <div #anchor class="scroll-anchor"></div>
+</div>

@@ -1,0 +1,53 @@
+<div *ngIf="movie" class="details-wrapper">
+  <div class="details-container">
+    <div
+      class="details-bg"
+      [ngStyle]="{
+        'background-image':
+          'url(https://image.tmdb.org/t/p/w1280' + movie.backdrop_path + ')'
+      }"
+    >
+      <div class="image-container">
+        <img
+          *ngIf="movie.poster_path"
+          [src]="'https://image.tmdb.org/t/p/w300' + movie.poster_path"
+          [alt]="movie.title"
+        />
+      </div>
+    </div>
+    <div class="description">
+
+      <h1>{{ movie.title }}</h1>
+      <p>{{ movie.overview }}</p>
+      <p><strong>Gêneros:</strong> {{ genres }}</p>
+      <p><strong>Duração:</strong>{{ movie.runtime }} min</p>
+      <p><strong>⭐:</strong>{{ movie.vote_average }}</p>
+    </div>
+
+    <h2>Elenco</h2>
+    <div class="cast-carousel" *ngIf="cast.length">
+      <div class="cast-card" *ngFor="let actor of cast">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w200' + actor.profile_path"
+          [alt]="actor.name"
+        />
+        <div class="actor-info">
+          <p class="actor-name">{{ actor.name }}</p>
+          <p class="actor-role">{{ actor.character }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="trailer-container">
+      <iframe
+        class="trailer-frame"
+        *ngIf="trailerUrl"
+        width="620"
+        height="475"
+        [src]="trailerUrl | safeUrl"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>

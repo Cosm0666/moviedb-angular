@@ -1,0 +1,51 @@
+<div *ngIf="serie" class="details-wrapper">
+  <div class="details-container">
+    <div
+      class="details-bg"
+      [ngStyle]="{
+        'background-image':
+          'url(https://image.tmdb.org/t/p/w1280' + serie.backdrop_path + ')'
+      }"
+    >
+      <div class="image-container">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w300' + serie.poster_path"
+          alt="serie.name"
+        />
+      </div>
+    </div>
+    <div class="description">
+      <h1>{{ serie.name }}</h1>
+      <p>{{ serie.overview }}</p>
+      <p><strong>Lançamento: </strong>{{ serie.first_air_date | date : "dd/MMM/yyyy" }}</p>
+      <p><strong>Temporadas: </strong> {{ serie.number_of_seasons }}</p>
+      <p><strong>Episodios: </strong> {{ serie.number_of_episodes }}</p>
+      <p>⭐: {{ serie.vote_everage }}</p>
+    </div>
+  </div>
+  <h2>Elenco</h2>
+    <div class="cast-carousel" *ngIf="cast.length">
+      <div class="cast-card" *ngFor="let actor of cast">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w200' + actor.profile_path"
+          [alt]="actor.name"
+        />
+        <div class="actor-info">
+          <p class="actor-name">{{ actor.name }}</p>
+          <p class="actor-role">{{ actor.character }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="trailer-container">
+      <iframe
+        class="trailer-frame"
+        *ngIf="trailerUrl"
+        width="620"
+        height="475"
+        [src]="trailerUrl | safeUrl"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+</div>

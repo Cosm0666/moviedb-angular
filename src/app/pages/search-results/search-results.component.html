@@ -1,0 +1,32 @@
+<div class="results">
+  <h2>Filmes:</h2>
+  <div class="movie-grid">
+    <div
+      *ngFor="let movie of movies"
+      class="movie-card"
+      (click)="goToMovie(movie.id)"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path"
+        alt="{{ movie.title }}"
+      />
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.release_date | date}}</p>
+    </div>
+  </div>
+  <h2 class="series-section">Series:</h2>
+  <div class="serie-grid">
+    <div
+      *ngFor="let s of series"
+      class="movie-card"
+      (click)="goToSerie(s.id)"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/w200' + s.poster_path"
+        alt="{{ s.title }}"
+      />
+      <h3>{{ s.name }}</h3>
+      <p>{{ s.first_air_date | date}}</p>
+    </div>
+  </div>
+</div>

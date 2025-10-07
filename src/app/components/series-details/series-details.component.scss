@@ -1,0 +1,141 @@
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+.details-bg {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.image-container {
+  position: absolute;
+  bottom: -60px;
+  left: 20px;
+  width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.description {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: 800px;
+  gap: 10px;
+}
+.cast-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.1rem;
+  padding: 1rem 0;
+  width: 100%;
+  max-width: 900px;
+  scroll-snap-type: x mandatory;
+  background-color: #9c9c9c;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cast-carousel:active {
+  cursor: grabbing;
+}
+
+.cast-card {
+  flex: 0 0 auto;
+  width: 140px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cast-card img {
+  width: 110px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.actor-info {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.actor-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.actor-role {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+
+.trailer-container {
+  margin: 20px 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+.trailer-frame {
+  width: 100%;
+  height: 475px;
+  
+  border: none;
+}
+
+@media (max-width: 430px) {
+  .image-container {
+    width: 120px;
+    bottom: -50px;
+    left: 270px;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    margin-left: 260px;
+  }
+  .cast-carousel {
+    padding-left: 1rem;   
+    padding-right: 0.5rem; 
+    scroll-padding-left: 1rem; 
+  }
+  .cast-card {
+    width: 100px;
+  }
+
+  .cast-card img {
+    width: 90px;
+    height: 120px;
+  }
+  .details-info {
+    margin-top: 70px;
+    padding: 0 10px;
+  }
+
+
+  .trailer-frame {
+    height: 310px;
+    width: 400px;
+    margin-left: 250px;
+  }
+}
