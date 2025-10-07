@@ -6,6 +6,7 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
 import { SeriesDetailsComponent } from './components/series-details/series-details.component';
 import { SeriesListComponent } from './components/series-list/series-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { RenderMode } from '@angular/ssr';
 
 export const routes: Routes = [
   {
@@ -13,10 +14,34 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-  { path: 'movies', component: MovieListComponent },
-  { path: 'movie/:id', component: MovieDetailsComponent },
-  { path: 'search/:query', component: SearchResultsComponent },
-  { path: 'tv/:id', component: SeriesDetailsComponent },
-  { path: 'tv', component: SeriesListComponent },
-  { path: 'home', component: HomeComponent },
+  {
+    path: 'movies',
+    component: MovieListComponent,
+    data: { renderMode: RenderMode.Prerender },
+  },
+  {
+    path: 'movie/:id',
+    component: MovieDetailsComponent,
+    data: { renderMode: RenderMode.Server },
+  },
+  {
+    path: 'search/:query',
+    component: SearchResultsComponent,
+    data: { renderMode: RenderMode.Server },
+  },
+  {
+    path: 'tv/:id',
+    component: SeriesDetailsComponent,
+    data: { renderMode: RenderMode.Server },
+  },
+  {
+    path: 'tv',
+    component: SeriesListComponent,
+    data: { renderMode: RenderMode.Prerender },
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    data: { renderMode: RenderMode.Prerender },
+  },
 ];
