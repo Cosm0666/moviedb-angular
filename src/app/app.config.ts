@@ -1,11 +1,11 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, RouterModule } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { provideServerRendering } from '@angular/platform-server';
-import { provideServerRouting, RenderMode } from '@angular/ssr';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
