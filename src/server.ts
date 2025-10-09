@@ -7,8 +7,7 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { XMLHttpRequest } from 'xhr2'
-(global as any).XMLHttpRequest = XMLHttpRequest;
+(globalThis as any).XMLHttpRequest = require('xhr2');
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
