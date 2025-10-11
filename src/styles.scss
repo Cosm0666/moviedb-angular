@@ -6,3 +6,11 @@
   font-family: "Merriweather Sans", sans-serif;
 }
 
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root, app-root {
+  width: 100%;
+}

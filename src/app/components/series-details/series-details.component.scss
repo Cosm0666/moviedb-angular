@@ -47,7 +47,6 @@
   scroll-snap-type: x mandatory;
   background-color: #9c9c9c;
   user-select: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 .cast-carousel:active {
@@ -106,18 +105,19 @@
   .image-container {
     width: 120px;
     bottom: -50px;
-    left: 270px;
+    // left: 270px;
   }
   .description {
     display: flex;
     flex-direction: column;
     max-width: 360px;
-    margin-left: 260px;
+    // margin-left: 260px;
   }
   .cast-carousel {
     padding-left: 1rem;   
     padding-right: 0.5rem; 
     scroll-padding-left: 1rem; 
+    overflow-x: auto;
   }
   .cast-card {
     width: 100px;
@@ -136,6 +136,7 @@
   .trailer-frame {
     height: 310px;
     width: 400px;
-    margin-left: 250px;
+    // margin-left: 250px;
+    padding: 10px;
   }
 }

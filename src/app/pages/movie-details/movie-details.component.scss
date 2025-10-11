@@ -28,6 +28,8 @@
   width: 100%;
   height: auto;
   display: block;
+  z-index: 1;
+  pointer-events: none;
 }
 .description {
   margin-top: 4rem;
@@ -64,9 +66,8 @@
   max-width: 900px;
   scroll-snap-type: x mandatory;
   background-color: #9c9c9c;
-  cursor: grab;
   user-select: none;
-  -webkit-overflow-scrolling: touch;
+  z-index: 10;              
 }
 
 .cast-carousel:active {
@@ -125,13 +126,17 @@
   .image-container {
     width: 120px;
     bottom: -50px;
-    left: 270px;
+    // left: 270px;
+  }
+  .details-wrapper {
+    flex-direction: row;
   }
   .description {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     max-width: 360px;
-    margin-left: 260px;
+    padding: 10px;
+    // margin-left: 260px;
   }
   .cast-carousel {
     padding-left: 1rem;   
@@ -150,11 +155,11 @@
     margin-top: 70px;
     padding: 0 10px;
   }
-
-
+  
   .trailer-frame {
     height: 310px;
     width: 400px;
-    margin-left: 250px;
+    // margin-left: 250px;
+    padding: 10px;
   }
 }

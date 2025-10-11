@@ -20,8 +20,9 @@
   text-decoration: none;
   color: inherit;
   img {
-    height: 350px;
-    width: 235px;
+    max-height: 350px;
+    height: auto;
+    width: 100%;
     // border-radius: 11px;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 8px;
   }
@@ -42,9 +43,8 @@
 @media (max-width: 490px) {
   .movies-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 4px;
-    margin: 0px;
   }
   .container {
     width: 430px;
