@@ -55,6 +55,14 @@
     margin-bottom: 4px;
   }
 }
+.details-container {
+  width: 100%;
+  max-width: 900px;       
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;     
+}
 
 
 .cast-carousel {

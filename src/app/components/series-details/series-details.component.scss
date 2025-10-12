@@ -13,6 +13,14 @@
   background-size: cover;
   background-position: center;
 }
+.details-container {
+  width: 100%;
+  max-width: 900px;       /* same max width used elsewhere */
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;     /* prevent any child from expanding page width */
+}
 
 .image-container {
   position: absolute;
@@ -117,7 +125,6 @@
     padding-left: 1rem;   
     padding-right: 0.5rem; 
     scroll-padding-left: 1rem; 
-    overflow-x: auto;
   }
   .cast-card {
     width: 100px;
